@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/prp-3/static/css/main.ab7136cd.chunk.css",
+    "main.js": "/prp-3/static/js/main.e143c27e.chunk.js",
+    "main.js.map": "/prp-3/static/js/main.e143c27e.chunk.js.map",
+    "runtime-main.js": "/prp-3/static/js/runtime-main.767f720c.js",
+    "runtime-main.js.map": "/prp-3/static/js/runtime-main.767f720c.js.map",
+    "static/js/2.3ccefac4.chunk.js": "/prp-3/static/js/2.3ccefac4.chunk.js",
+    "static/js/2.3ccefac4.chunk.js.map": "/prp-3/static/js/2.3ccefac4.chunk.js.map",
+    "static/js/3.599dfe5b.chunk.js": "/prp-3/static/js/3.599dfe5b.chunk.js",
+    "static/js/3.599dfe5b.chunk.js.map": "/prp-3/static/js/3.599dfe5b.chunk.js.map",
+    "index.html": "/prp-3/index.html",
+    "static/css/main.ab7136cd.chunk.css.map": "/prp-3/static/css/main.ab7136cd.chunk.css.map",
+    "static/js/2.3ccefac4.chunk.js.LICENSE.txt": "/prp-3/static/js/2.3ccefac4.chunk.js.LICENSE.txt",
+    "static/media/logo.103b5fa1.svg": "/prp-3/static/media/logo.103b5fa1.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.767f720c.js",
+    "static/js/2.3ccefac4.chunk.js",
+    "static/css/main.ab7136cd.chunk.css",
+    "static/js/main.e143c27e.chunk.js"
+  ]
+}
