@@ -27,6 +27,6 @@ module.exports = {
     'no-template-curly-in-string': ['error', 'always'],
     'eqeqeq': ['error', 'always'],
     'no-console': ['warn', 'always'],
-    
+    '@typescript-eslint/explicit-module-boundary-types': ['off']
   }
 }
