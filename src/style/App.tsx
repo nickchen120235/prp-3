@@ -7,10 +7,9 @@ const styles = makeStyles(() => ({
     right: '5px'
   },
   graph: {
-    display: 'flex',
-    justifyContent: 'center',
-    margin: '50px',
-    width: 'auto'
+    margin: '20px',
+    width: 'auto',
+    columnCount: 1
   }
 }))
 

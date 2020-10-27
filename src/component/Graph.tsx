@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { FlexibleWidthXYPlot, XAxis, YAxis, VerticalGridLines, HorizontalGridLines, VerticalBarSeries } from 'react-vis'
 
 import { data } from './data'
