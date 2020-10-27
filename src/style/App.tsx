@@ -1,8 +1,10 @@
 import { makeStyles } from '@material-ui/core/styles'
 
 const styles = makeStyles(() => ({
-  appbar: {
-    alignItems: 'center'
+  fab: {
+    position: 'absolute',
+    bottom: '5px',
+    right: '5px'
   }
 }))
 

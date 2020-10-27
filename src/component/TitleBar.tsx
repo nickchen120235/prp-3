@@ -11,7 +11,7 @@ export const TitleBar = (props: TitleBarProps) => {
   const classes = styles()
   return (
     <>
-      <AppBar className={classes.appbar}>
+      <AppBar className={classes.appbar} elevation={0}>
         <Toolbar>
           <Typography variant='h4'>{props.title}</Typography>
         </Toolbar>
