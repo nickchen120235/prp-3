@@ -1,4 +1,4 @@
 .eslintrc.js
-*test.*
+*test*.*
 index.tsx
 reportWebVitals.ts
