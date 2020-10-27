@@ -54,7 +54,7 @@ const App = () => {
         )}
       </Popper>
       <Paper className={classes.graph}>
-        <Graph />
+        <Graph mode={selectorOptions[selected]} />
       </Paper>
     </>
   )
