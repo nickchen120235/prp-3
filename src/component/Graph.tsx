@@ -1,5 +1,5 @@
 import React from 'react'
-import { FlexibleXYPlot, XAxis, YAxis, VerticalGridLines, HorizontalGridLines, VerticalBarSeries } from 'react-vis'
+import { FlexibleWidthXYPlot, XAxis, YAxis, VerticalGridLines, HorizontalGridLines, VerticalBarSeries } from 'react-vis'
 
 import { data } from './data'
 
@@ -18,12 +18,12 @@ export const Graph = () => {
   // console.log(renderData2)
   return(
     <>
-      <FlexibleXYPlot style={{margin: '5px'}} stackBy='y'>
+      <FlexibleWidthXYPlot height={500} style={{margin: '5px'}} stackBy='y'>
         <VerticalGridLines /><HorizontalGridLines />
         <XAxis tickFormat={v => months[v-1]} /><YAxis />
         <VerticalBarSeries data={renderData1} barWidth={.5} />
         <VerticalBarSeries data={renderData2} barWidth={.5} />
-      </FlexibleXYPlot>
+      </FlexibleWidthXYPlot>
     </>
   )
 }
