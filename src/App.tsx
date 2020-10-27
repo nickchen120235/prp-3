@@ -3,9 +3,10 @@ import { CssBaseline, Fab, MenuItem, Popper, Grow, Paper, ClickAwayListener, Men
 import { Settings } from '@material-ui/icons'
 
 import { TitleBar } from './component/TitleBar'
+import { Graph } from './component/Graph'
 import styles from './style/App'
 
-const selectorOptions = ['from', 'location', 'type', 'reserve', 'age']
+const selectorOptions = ['gender', 'location', 'type', 'reserve', 'age']
 
 const App = () => {
   const [selected, setSelected] = useState(0)
@@ -52,7 +53,9 @@ const App = () => {
           </Grow>
         )}
       </Popper>
-      <p>Hello React!</p>
+      <Paper className={classes.graph}>
+        <Graph />
+      </Paper>
     </>
   )
 }
