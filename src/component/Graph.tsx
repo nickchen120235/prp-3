@@ -1,7 +1,8 @@
 import React from 'react'
-import { FlexibleWidthXYPlot, XAxis, YAxis, VerticalGridLines, HorizontalGridLines, VerticalBarSeries, ChartLabel, DiscreteColorLegend } from 'react-vis'
+import { FlexibleWidthXYPlot, XAxis, YAxis, VerticalBarSeries, ChartLabel, DiscreteColorLegend } from 'react-vis'
 
 import { data } from './data'
+import '../../node_modules/react-vis/dist/style.css' // To make styling works
 
 interface GraphProps {
   mode: string
@@ -96,8 +97,7 @@ export const Graph = (props: GraphProps) => {
   return(
     <FlexibleWidthXYPlot height={550} stackBy='y' animation style={{marginLeft: '5px', marginBottom: '5px'}}>
       <DiscreteColorLegend items={legendData} orientation='horizontal' />
-      <VerticalGridLines /><HorizontalGridLines />
-      <XAxis tickFormat={v => months[v-1]} top={500} /><YAxis left={25} />
+      <XAxis tickFormat={v => months[v-1]} top={500} hideLine /><YAxis left={25} hideLine />
       <ChartLabel id='x' text='Month' xPercent={.5}   yPercent={.92} />
       <ChartLabel id='y' text='%'     xPercent={.008} yPercent={.4}  />
       {renderData.map((value, index) => <VerticalBarSeries key={index} data={value} barWidth={.5} colorType='literal' />)}
