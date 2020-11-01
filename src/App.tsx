@@ -23,7 +23,7 @@ const App = () => {
             {selectorOptions.map((value, index) => <FormControlLabel key={index} value={value} control={<Radio />} label={value} style={{marginLeft: '5px'}} />)}
           </RadioGroup>
         </FormControl>
-        <Graph mode={selected} />
+        <Graph />
       </Paper>
     </>
   )
