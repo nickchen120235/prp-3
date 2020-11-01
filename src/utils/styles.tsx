@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles'
 
-const styles = makeStyles(() => ({
+export const AppStyles = makeStyles(() => ({
   fab: {
     position: 'absolute',
     bottom: '5px',
@@ -13,4 +13,8 @@ const styles = makeStyles(() => ({
   }
 }))
 
-export default styles
+export const TitleStyles = makeStyles(() => ({
+  appbar: {
+    alignItems: 'center'
+  }
+}))

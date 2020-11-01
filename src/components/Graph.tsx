@@ -1,9 +1,8 @@
 import React from 'react'
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend } from 'recharts'
 
-import { data } from './data'
-
-const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC']
+import { data } from '../utils/data'
+import { months } from '../utils/consts'
 
 const testData = data.map((value, index) => ({
   month: months[index],

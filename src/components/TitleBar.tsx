@@ -1,14 +1,11 @@
 import React from 'react'
 import { AppBar, Toolbar, Typography } from '@material-ui/core'
 
-import styles from '../style/TitleBar'
-
-interface TitleBarProps {
-  title: string
-}
+import { TitleStyles } from '../utils/styles'
+import { TitleBarProps } from '../utils/types' 
 
 export const TitleBar = (props: TitleBarProps) => {
-  const classes = styles()
+  const classes = TitleStyles()
   return (
     <>
       <AppBar className={classes.appbar} elevation={0}>
