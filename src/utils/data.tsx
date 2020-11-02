@@ -23,12 +23,12 @@ export const data = [
   },
   {
     female: 21,
-    local: 70,
-    USA: 6,
+    local: 69.31, // 70
+    USA: 5.94, // 6
     SA: 0,
-    EU: 15,
+    EU: 14.85, // 15
     MEA: 0,
-    ASIA: 10,
+    ASIA: 9.9, // 10
     businessmen: 80,
     tourists: 20,
     DR: 70,
