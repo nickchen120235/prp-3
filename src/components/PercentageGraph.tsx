@@ -2,7 +2,7 @@ import React from 'react'
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend } from 'recharts'
 
 import { data } from '../utils/data'
-import { months, key, colors, name } from '../utils/consts'
+import { months, conventionMonths, key, colors, name } from '../utils/consts'
 import { PercentageGraphProps, DataType } from '../utils/types'
 
 export const PercentageGraph = (props: PercentageGraphProps) => {
@@ -16,6 +16,7 @@ export const PercentageGraph = (props: PercentageGraphProps) => {
         male: 100-value.female,
         female: value.female
       }))
+      renderData = props.convention? renderData.filter(value => conventionMonths.includes(value.month)): renderData
       renderKey = key.gender
       renderName = name.gender
       break
@@ -29,6 +30,7 @@ export const PercentageGraph = (props: PercentageGraphProps) => {
         mea: value.MEA,
         asia: value.ASIA
       }))
+      renderData = props.convention? renderData.filter(value => conventionMonths.includes(value.month)): renderData
       renderKey = key.location
       renderName = name.location
       break
@@ -38,6 +40,7 @@ export const PercentageGraph = (props: PercentageGraphProps) => {
         businessmen: value.businessmen,
         tourists: value.tourists
       }))
+      renderData = props.convention? renderData.filter(value => conventionMonths.includes(value.month)): renderData
       renderKey = key.type
       renderName = name.type
       break
@@ -48,6 +51,7 @@ export const PercentageGraph = (props: PercentageGraphProps) => {
         agency: value.agency,
         air: value.AC
       }))
+      renderData = props.convention? renderData.filter(value => conventionMonths.includes(value.month)): renderData
       renderKey = key.reserve
       renderName = name.reserve
       break
@@ -59,6 +63,7 @@ export const PercentageGraph = (props: PercentageGraphProps) => {
         to55: value.to55,
         m55: value.m55
       }))
+      renderData = props.convention? renderData.filter(value => conventionMonths.includes(value.month)): renderData
       renderKey = key.age
       renderName = name.age
       break
@@ -74,7 +79,7 @@ export const PercentageGraph = (props: PercentageGraphProps) => {
         <YAxis domain={[0, 'dataMax']} tickFormatter={value => `${value}%`} />
         <Legend />
         {renderKey.map((value, index) => 
-          <Bar key={value} name={renderName[index]} dataKey={value} stackId={1} fill={colors[index]} maxBarSize={50} animationEasing='ease-in-out' />)}
+          <Bar key={value} name={renderName[index]} dataKey={value} stackId={1} fill={colors[index]} maxBarSize={50} animationEasing='ease-in-out' animationDuration={500} />)}
       </BarChart>
     </ResponsiveContainer>
   )

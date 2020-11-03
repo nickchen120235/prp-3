@@ -2,14 +2,15 @@ import React from 'react'
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Legend } from 'recharts'
 
 import { data } from '../utils/data'
-import { months } from '../utils/consts'
+import { months, conventionMonths } from '../utils/consts'
 import { LengthDataType, LineProps } from '../utils/types'
 
 export const LengthGraph = (props: LineProps) => {
-  const renderData: LengthDataType[] = data.map((value, index) => ({
+  let renderData: LengthDataType[] = data.map((value, index) => ({
     month: months[index],
     length: value.LoS*24
   }))
+  renderData = props.convention? renderData.filter(value => conventionMonths.includes(value.month)): renderData
 
   return(
     <ResponsiveContainer width='95%' height={300}>
@@ -18,7 +19,7 @@ export const LengthGraph = (props: LineProps) => {
         <XAxis dataKey='month' />
         <YAxis domain={[30, 50]} tickFormatter={value => `${value} hours`} />
         <Legend />
-        <Line name='Length of Stay' dataKey='length' dot={{r: 5}} animationEasing='ease-in-out' />
+        <Line name='Length of Stay' dataKey='length' dot={{r: 5}} animationEasing='ease-in-out' animationDuration={500} />
       </LineChart>
     </ResponsiveContainer>
   )

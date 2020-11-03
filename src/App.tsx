@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { CssBaseline, AppBar, Toolbar, Paper, Typography, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio, Switch, FormGroup } from '@material-ui/core'
+import { CssBaseline, AppBar, Toolbar, Paper, Typography, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio, Switch } from '@material-ui/core'
 
 import { PercentageGraph } from './components/PercentageGraph'
 import { PriceGraph } from './components/PriceGraph'

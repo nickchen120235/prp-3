@@ -14,6 +14,16 @@ export const months = [
   'DEC'
 ]
 
+export const conventionMonths = [
+  'APR',
+  'MAY',
+  'JUN',
+  'SEP',
+  'OCT',
+  'NOV',
+  'DEC'
+]
+
 export const colors = [
   '#00429d',
   '#5681b9',
