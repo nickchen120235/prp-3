@@ -12,7 +12,7 @@ export const PriceGraph = () => {
   }))
 
   return(
-    <ResponsiveContainer width='95%' height={600}>
+    <ResponsiveContainer width='95%' height={300}>
       <LineChart data={renderData} margin={{top: 20, right: 20, left: 20, bottom: 20}}>
         <CartesianGrid strokeDasharray='3 3' />
         <XAxis dataKey='month' />
