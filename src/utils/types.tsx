@@ -1,3 +1,4 @@
+/** props */
 export interface TitleBarProps {
   title: string
 }
@@ -6,6 +7,7 @@ export interface PercentageGraphProps {
   mode: string
 }
 
+/** PercentageGraph */
 type Gender = {
   month: string,
   male: number,
@@ -44,3 +46,9 @@ type Age = {
 }
 
 export type DataType = Gender | Location | Customer | Reserve | Age
+
+/** PriceGraph */
+export type PriceDataType = {
+  month: string,
+  price: number,
+}

@@ -3,6 +3,8 @@ import { CssBaseline, Paper, Typography, FormControl, FormLabel, RadioGroup, For
 
 import { TitleBar } from './components/TitleBar'
 import { PercentageGraph } from './components/PercentageGraph'
+import { PriceGraph } from './components/PriceGraph'
+
 import { AppStyles } from './utils/styles'
 import { selectorOptions, selectorLabel } from './utils/consts'
 
@@ -23,6 +25,10 @@ const App = () => {
           </RadioGroup>
         </FormControl>
         <PercentageGraph mode={selected} />
+      </Paper>
+      <Paper className={classes.graph}>
+        <Typography variant='h5' align='center'>Price</Typography>
+        <PriceGraph />
       </Paper>
     </>
   )
