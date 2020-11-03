@@ -54,7 +54,13 @@ export type PriceDataType = {
 }
 
 /** LengthGraph */
-export type LengthGraphType = {
+export type LengthDataType = {
   month: string,
   length: number
+}
+
+/** OccupancyGraph */
+export type OccupancyDataType = {
+  month: string,
+  occ: number
 }

@@ -3,10 +3,10 @@ import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Lege
 
 import { data } from '../utils/data'
 import { months } from '../utils/consts'
-import { LengthGraphType } from '../utils/types'
+import { LengthDataType } from '../utils/types'
 
 export const LengthGraph = () => {
-  const renderData: LengthGraphType[] = data.map((value, index) => ({
+  const renderData: LengthDataType[] = data.map((value, index) => ({
     month: months[index],
     length: value.LoS*24
   }))

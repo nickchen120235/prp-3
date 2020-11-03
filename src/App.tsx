@@ -5,6 +5,7 @@ import { TitleBar } from './components/TitleBar'
 import { PercentageGraph } from './components/PercentageGraph'
 import { PriceGraph } from './components/PriceGraph'
 import { LengthGraph } from './components/LengthGraph'
+import { OccupancyGraph } from './components/OccupancyGraph'
 
 import { AppStyles } from './utils/styles'
 import { selectorOptions, selectorLabel } from './utils/consts'
@@ -34,6 +35,10 @@ const App = () => {
       <Paper className={classes.graph}>
         <Typography variant='h5' align='center'>Length of Stay</Typography>
         <LengthGraph />
+      </Paper>
+      <Paper className={classes.graph}>
+        <Typography variant='h5' align='center'>Occupancy</Typography>
+        <OccupancyGraph />
       </Paper>
     </>
   )
