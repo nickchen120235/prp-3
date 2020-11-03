@@ -4,7 +4,7 @@ import { CssBaseline, Paper, Typography, FormControl, FormLabel, RadioGroup, For
 import { TitleBar } from './components/TitleBar'
 import { PercentageGraph } from './components/PercentageGraph'
 import { AppStyles } from './utils/styles'
-import { SelectorOptions } from './utils/consts'
+import { selectorOptions, selectorLabel } from './utils/consts'
 
 const App = () => {
   const [selected, setSelected] = useState('gender')
@@ -19,7 +19,7 @@ const App = () => {
         <FormControl>
           <FormLabel component='legend' style={{marginLeft: '5px'}}>VIEW MODE</FormLabel>
           <RadioGroup row value={selected} onChange={(e, value) => {setSelected(value)}}>
-            {SelectorOptions.map((value, index) => <FormControlLabel key={index} value={value} control={<Radio />} label={value} style={{marginLeft: '5px'}} />)}
+            {selectorOptions.map((value, index) => <FormControlLabel key={index} value={value} control={<Radio />} label={selectorLabel[index]} style={{marginLeft: '5px'}} />)}
           </RadioGroup>
         </FormControl>
         <PercentageGraph mode={selected} />

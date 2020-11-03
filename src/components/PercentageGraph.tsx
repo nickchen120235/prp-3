@@ -2,12 +2,13 @@ import React from 'react'
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend } from 'recharts'
 
 import { data } from '../utils/data'
-import { months, genderKey, locationKey, typekey, reserveKey, agekey } from '../utils/consts'
+import { months, key, colors, name } from '../utils/consts'
 import { PercentageGraphProps, DataType } from '../utils/types'
 
 export const PercentageGraph = (props: PercentageGraphProps) => {
   let renderData: DataType[] = []
-  let key: string[] = []
+  let renderKey: string[] = []
+  let renderName: string[] = []
   switch(props.mode){
     case 'gender':
       renderData = data.map((value, index) => ({
@@ -15,7 +16,8 @@ export const PercentageGraph = (props: PercentageGraphProps) => {
         male: 100-value.female,
         female: value.female
       }))
-      key = genderKey
+      renderKey = key.gender
+      renderName = name.gender
       break
     case 'location':
       renderData = data.map((value, index) => ({
@@ -27,7 +29,8 @@ export const PercentageGraph = (props: PercentageGraphProps) => {
         mea: value.MEA,
         asia: value.ASIA
       }))
-      key = locationKey
+      renderKey = key.location
+      renderName = name.location
       break
     case 'type':
       renderData = data.map((value, index) => ({
@@ -35,7 +38,8 @@ export const PercentageGraph = (props: PercentageGraphProps) => {
         businessmen: value.businessmen,
         tourists: value.tourists
       }))
-      key = typekey
+      renderKey = key.type
+      renderName = name.type
       break
     case 'reserve':
       renderData = data.map((value, index) => ({
@@ -44,7 +48,8 @@ export const PercentageGraph = (props: PercentageGraphProps) => {
         agency: value.agency,
         air: value.AC
       }))
-      key = reserveKey
+      renderKey = key.reserve
+      renderName = name.reserve
       break
     case 'age':
       renderData = data.map((value, index) => ({
@@ -54,7 +59,8 @@ export const PercentageGraph = (props: PercentageGraphProps) => {
         to55: value.to55,
         m55: value.m55
       }))
-      key = agekey
+      renderKey = key.age
+      renderName = name.age
       break
     default:
       break
@@ -67,7 +73,8 @@ export const PercentageGraph = (props: PercentageGraphProps) => {
         <XAxis dataKey='month' />
         <YAxis domain={[0, 'dataMax']} />
         <Legend />
-        {key.map((value, index) => <Bar key={value} dataKey={value} stackId={1} fill={index%2? '#8884d8': '#82ca9d'} maxBarSize={50} />)}
+        {renderKey.map((value, index) => 
+          <Bar key={value} name={renderName[index]} dataKey={value} stackId={1} fill={colors[index]} maxBarSize={50} animationEasing='ease-in-out' />)}
       </BarChart>
     </ResponsiveContainer>
   )
