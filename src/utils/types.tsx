@@ -50,5 +50,11 @@ export type DataType = Gender | Location | Customer | Reserve | Age
 /** PriceGraph */
 export type PriceDataType = {
   month: string,
-  price: number,
+  price: number
+}
+
+/** LengthGraph */
+export type LengthGraphType = {
+  month: string,
+  length: number
 }
