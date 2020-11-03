@@ -8,7 +8,7 @@ import { LengthGraphType } from '../utils/types'
 export const LengthGraph = () => {
   const renderData: LengthGraphType[] = data.map((value, index) => ({
     month: months[index],
-    length: value.LoS
+    length: value.LoS*24
   }))
 
   return(
@@ -16,7 +16,7 @@ export const LengthGraph = () => {
       <LineChart data={renderData} margin={{top: 20, right: 20, left: 20, bottom: 20}}>
         <CartesianGrid strokeDasharray='3 3' />
         <XAxis dataKey='month' />
-        <YAxis domain={[1.25, 2.25]} />
+        <YAxis domain={[30, 50]} tickFormatter={value => `${value} hours`} />
         <Legend />
         <Line name='Length of Stay' dataKey='length' dot={{r: 5}} animationEasing='ease-in-out' />
       </LineChart>
