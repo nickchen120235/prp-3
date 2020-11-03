@@ -16,7 +16,7 @@ export const PriceGraph = () => {
       <LineChart data={renderData} margin={{top: 20, right: 20, left: 20, bottom: 20}}>
         <CartesianGrid strokeDasharray='3 3' />
         <XAxis dataKey='month' />
-        <YAxis domain={[140, 175]} tickCount={8} />
+        <YAxis domain={[140, 175]} tickCount={8} tickFormatter={value => `$${value}`} />
         <Legend />
         <Line name='Price' dataKey='price' dot={{r: 5}} animationEasing='ease-in-out' />
       </LineChart>

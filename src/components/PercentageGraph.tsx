@@ -71,7 +71,7 @@ export const PercentageGraph = (props: PercentageGraphProps) => {
       <BarChart data={renderData} margin={{top: 20, right: 20, left: 20, bottom: 20}}>
         <CartesianGrid strokeDasharray='3 3' />
         <XAxis dataKey='month' />
-        <YAxis domain={[0, 'dataMax']} />
+        <YAxis domain={[0, 'dataMax']} tickFormatter={value => `${value}%`} />
         <Legend />
         {renderKey.map((value, index) => 
           <Bar key={value} name={renderName[index]} dataKey={value} stackId={1} fill={colors[index]} maxBarSize={50} animationEasing='ease-in-out' />)}
