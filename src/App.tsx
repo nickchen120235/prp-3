@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import { CssBaseline, Paper, Typography, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio } from '@material-ui/core'
+import { CssBaseline, AppBar, Toolbar, Paper, Typography, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio, Switch, FormGroup } from '@material-ui/core'
 
-import { TitleBar } from './components/TitleBar'
 import { PercentageGraph } from './components/PercentageGraph'
 import { PriceGraph } from './components/PriceGraph'
 import { LengthGraph } from './components/LengthGraph'
@@ -12,12 +11,19 @@ import { selectorOptions, selectorLabel } from './utils/consts'
 
 const App = () => {
   const [selected, setSelected] = useState('gender')
+  const [convention, setConvention] = useState(false)
 
   const classes = AppStyles()
   return (
     <>
       <CssBaseline />
-      <TitleBar title='PRP Assignment 3' />
+      <AppBar elevation={0}>
+        <Toolbar>
+          <Typography className={classes.appbar} variant='h4'>PRP Assignment 3</Typography>
+          <FormControlLabel className={classes.switch} control={<Switch checked={convention} onChange={() => setConvention(prev => !prev)} />} label='Convention Only' />
+        </Toolbar>
+      </AppBar>
+      <Toolbar />
       <Paper className={classes.graph}>
         <Typography variant='h5' align='center'>Percentage of Customers</Typography>
         <FormControl>
@@ -26,19 +32,19 @@ const App = () => {
             {selectorOptions.map((value, index) => <FormControlLabel key={index} value={value} control={<Radio />} label={selectorLabel[index]} style={{marginLeft: '5px'}} />)}
           </RadioGroup>
         </FormControl>
-        <PercentageGraph mode={selected} />
+        <PercentageGraph mode={selected} convention={convention} />
       </Paper>
       <Paper className={classes.graph}>
         <Typography variant='h5' align='center'>Price</Typography>
-        <PriceGraph />
+        <PriceGraph convention={convention} />
       </Paper>
       <Paper className={classes.graph}>
         <Typography variant='h5' align='center'>Length of Stay</Typography>
-        <LengthGraph />
+        <LengthGraph convention={convention} />
       </Paper>
       <Paper className={classes.graph}>
         <Typography variant='h5' align='center'>Occupancy</Typography>
-        <OccupancyGraph />
+        <OccupancyGraph convention={convention} />
       </Paper>
     </>
   )

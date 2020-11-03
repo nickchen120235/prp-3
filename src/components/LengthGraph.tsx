@@ -3,9 +3,9 @@ import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Lege
 
 import { data } from '../utils/data'
 import { months } from '../utils/consts'
-import { LengthDataType } from '../utils/types'
+import { LengthDataType, LineProps } from '../utils/types'
 
-export const LengthGraph = () => {
+export const LengthGraph = (props: LineProps) => {
   const renderData: LengthDataType[] = data.map((value, index) => ({
     month: months[index],
     length: value.LoS*24

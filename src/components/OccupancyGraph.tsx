@@ -3,9 +3,9 @@ import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Lege
 
 import { data } from '../utils/data'
 import { months } from '../utils/consts'
-import { OccupancyDataType } from '../utils/types'
+import { LineProps, OccupancyDataType } from '../utils/types'
 
-export const OccupancyGraph = () => {
+export const OccupancyGraph = (props: LineProps) => {
   const renderData: OccupancyDataType[] = data.map((value, index) => ({
     month: months[index],
     occ: value.occupancy

@@ -3,9 +3,9 @@ import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Lege
 
 import { data } from '../utils/data'
 import { months } from '../utils/consts'
-import { PriceDataType } from '../utils/types'
+import { PriceDataType, LineProps } from '../utils/types'
 
-export const PriceGraph = () => {
+export const PriceGraph = (props: LineProps) => {
   const renderData: PriceDataType[] = data.map((value, index) => ({
     month: months[index],
     price: value.price

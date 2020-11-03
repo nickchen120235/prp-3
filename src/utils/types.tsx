@@ -4,7 +4,12 @@ export interface TitleBarProps {
 }
 
 export interface PercentageGraphProps {
-  mode: string
+  mode: string,
+  convention: boolean
+}
+
+export interface LineProps {
+  convention: boolean
 }
 
 /** PercentageGraph */
