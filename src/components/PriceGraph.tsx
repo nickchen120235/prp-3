@@ -18,7 +18,7 @@ export const PriceGraph = (props: LineProps) => {
         <CartesianGrid strokeDasharray='3 3' />
         <XAxis dataKey='month' />
         <YAxis domain={[140, 175]} tickCount={8} tickFormatter={value => `$${value}`} />
-        <Legend />
+        <Legend wrapperStyle={{position: 'absolute', left: '5%'}} />
         <Line name='Price' dataKey='price' dot={{r: 5}} animationEasing='ease-in-out' animationDuration={500} />
       </LineChart>
     </ResponsiveContainer>

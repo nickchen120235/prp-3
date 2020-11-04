@@ -18,7 +18,7 @@ export const LengthGraph = (props: LineProps) => {
         <CartesianGrid strokeDasharray='3 3' />
         <XAxis dataKey='month' />
         <YAxis domain={[30, 50]} tickFormatter={value => `${value} hours`} />
-        <Legend />
+        <Legend wrapperStyle={{position: 'absolute', left: '5%'}} />
         <Line name='Length of Stay' dataKey='length' dot={{r: 5}} animationEasing='ease-in-out' animationDuration={500} />
       </LineChart>
     </ResponsiveContainer>

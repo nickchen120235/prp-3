@@ -18,7 +18,7 @@ export const OccupancyGraph = (props: LineProps) => {
         <CartesianGrid strokeDasharray='3 3' />
         <XAxis dataKey='month' />
         <YAxis domain={[50, 100]} tickCount={6} tickFormatter={value => `${value}%`} />
-        <Legend />
+        <Legend wrapperStyle={{position: 'absolute', left: '5%'}} />
         <Line name='Occupancy' dataKey='occ' dot={{r: 5}} animationEasing='ease-in-out' animationDuration={500} />
       </LineChart>
     </ResponsiveContainer>
