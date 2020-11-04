@@ -1,5 +1,5 @@
 import React from 'react'
-import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Legend } from 'recharts'
+import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Legend, Tooltip } from 'recharts'
 
 import { data } from '../utils/data'
 import { months, conventionMonths } from '../utils/consts'
@@ -19,6 +19,7 @@ export const PriceGraph = (props: LineProps) => {
         <XAxis dataKey='month' />
         <YAxis domain={[140, 175]} tickCount={8} tickFormatter={value => `$${value}`} />
         <Legend wrapperStyle={{position: 'absolute', left: '5%'}} />
+        <Tooltip formatter={value => `$${value}`} />
         <Line name='Price' dataKey='price' dot={{r: 5}} animationEasing='ease-in-out' animationDuration={500} />
       </LineChart>
     </ResponsiveContainer>

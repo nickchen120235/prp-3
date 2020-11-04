@@ -1,5 +1,5 @@
 import React from 'react'
-import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend } from 'recharts'
+import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend, Tooltip } from 'recharts'
 
 import { data } from '../utils/data'
 import { months, conventionMonths, key, colors, name } from '../utils/consts'
@@ -78,6 +78,7 @@ export const PercentageGraph = (props: PercentageGraphProps) => {
         <XAxis dataKey='month' />
         <YAxis domain={[0, 'dataMax']} tickFormatter={value => `${value}%`} />
         <Legend wrapperStyle={{position: 'absolute', left: '6%'}} />
+        <Tooltip formatter={value => `${value}%`} />
         {renderKey.map((value, index) => 
           <Bar key={value} name={renderName[index]} dataKey={value} stackId={1} fill={colors[index]} maxBarSize={50} animationEasing='ease-in-out' animationDuration={500} />)}
       </BarChart>

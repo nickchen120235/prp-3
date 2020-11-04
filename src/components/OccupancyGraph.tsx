@@ -1,5 +1,5 @@
 import React from 'react'
-import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Legend } from 'recharts'
+import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Legend, Tooltip } from 'recharts'
 
 import { data } from '../utils/data'
 import { months, conventionMonths } from '../utils/consts'
@@ -19,6 +19,7 @@ export const OccupancyGraph = (props: LineProps) => {
         <XAxis dataKey='month' />
         <YAxis domain={[50, 100]} tickCount={6} tickFormatter={value => `${value}%`} />
         <Legend wrapperStyle={{position: 'absolute', left: '5%'}} />
+        <Tooltip formatter={value => `${value}%`} />
         <Line name='Occupancy' dataKey='occ' dot={{r: 5}} animationEasing='ease-in-out' animationDuration={500} />
       </LineChart>
     </ResponsiveContainer>
