@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/prp-3/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/prp-3/static/js/main.8279fcea.chunk.js",
-    "main.js.map": "/prp-3/static/js/main.8279fcea.chunk.js.map",
+    "main.js": "/prp-3/static/js/main.791ce42b.chunk.js",
+    "main.js.map": "/prp-3/static/js/main.791ce42b.chunk.js.map",
     "runtime-main.js": "/prp-3/static/js/runtime-main.ea132a3e.js",
     "runtime-main.js.map": "/prp-3/static/js/runtime-main.ea132a3e.js.map",
-    "static/js/2.e4eadfba.chunk.js": "/prp-3/static/js/2.e4eadfba.chunk.js",
-    "static/js/2.e4eadfba.chunk.js.map": "/prp-3/static/js/2.e4eadfba.chunk.js.map",
+    "static/js/2.10c19c64.chunk.js": "/prp-3/static/js/2.10c19c64.chunk.js",
+    "static/js/2.10c19c64.chunk.js.map": "/prp-3/static/js/2.10c19c64.chunk.js.map",
     "static/js/3.f4acb6df.chunk.js": "/prp-3/static/js/3.f4acb6df.chunk.js",
     "static/js/3.f4acb6df.chunk.js.map": "/prp-3/static/js/3.f4acb6df.chunk.js.map",
     "index.html": "/prp-3/index.html",
     "static/css/main.6dea0f05.chunk.css.map": "/prp-3/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.e4eadfba.chunk.js.LICENSE.txt": "/prp-3/static/js/2.e4eadfba.chunk.js.LICENSE.txt"
+    "static/js/2.10c19c64.chunk.js.LICENSE.txt": "/prp-3/static/js/2.10c19c64.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.ea132a3e.js",
-    "static/js/2.e4eadfba.chunk.js",
+    "static/js/2.10c19c64.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.8279fcea.chunk.js"
+    "static/js/main.791ce42b.chunk.js"
   ]
 }
