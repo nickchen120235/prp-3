@@ -50,6 +50,12 @@ export const selectorLabel = [
   'Age'
 ]
 
+export const lineSelectorLabel = [
+  'Price',
+  'Length of Stay',
+  'Occupancy'
+]
+
 /** dataKey */
 const genderKey = [
   'male',

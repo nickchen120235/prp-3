@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { CssBaseline, AppBar, Toolbar, Paper, Typography, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio, Switch } from '@material-ui/core'
+import { CssBaseline, AppBar, Toolbar, Paper, Typography, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio, Switch, Tab, Tabs } from '@material-ui/core'
 
 import { PercentageGraph } from './components/PercentageGraph'
 import { PriceGraph } from './components/PriceGraph'
@@ -7,11 +7,15 @@ import { LengthGraph } from './components/LengthGraph'
 import { OccupancyGraph } from './components/OccupancyGraph'
 
 import { AppStyles } from './utils/styles'
-import { selectorOptions, selectorLabel } from './utils/consts'
+import { selectorOptions, selectorLabel, lineSelectorLabel } from './utils/consts'
 
 const App = () => {
-  const [selected, setSelected] = useState('gender')
+  const [percentSelected, setPercentSelected] = useState('gender')
   const [convention, setConvention] = useState(false)
+  const [lineSelected, setLineSelected] = useState(0)
+  const lineGraphs = [<PriceGraph key={0} convention={convention} />, <LengthGraph key={1} convention={convention} />, <OccupancyGraph key={2} convention={convention} />]
+
+  const handleLineChange = (e: React.ChangeEvent<Record<string, unknown>>, newValue: number) => setLineSelected(newValue)
 
   const classes = AppStyles()
   return (
@@ -28,23 +32,18 @@ const App = () => {
         <Typography variant='h5' align='center'>Percentage of Customers</Typography>
         <FormControl>
           <FormLabel component='legend' style={{marginLeft: '5px'}}>VIEW MODE</FormLabel>
-          <RadioGroup row value={selected} onChange={(e, value) => {setSelected(value)}}>
+          <RadioGroup row value={percentSelected} onChange={(e, value) => {setPercentSelected(value)}}>
             {selectorOptions.map((value, index) => <FormControlLabel key={index} value={value} control={<Radio />} label={selectorLabel[index]} style={{marginLeft: '5px'}} />)}
           </RadioGroup>
         </FormControl>
-        <PercentageGraph mode={selected} convention={convention} />
+        <PercentageGraph mode={percentSelected} convention={convention} />
       </Paper>
       <Paper className={classes.graph}>
-        <Typography variant='h5' align='center'>Price</Typography>
-        <PriceGraph convention={convention} />
-      </Paper>
-      <Paper className={classes.graph}>
-        <Typography variant='h5' align='center'>Length of Stay</Typography>
-        <LengthGraph convention={convention} />
-      </Paper>
-      <Paper className={classes.graph}>
-        <Typography variant='h5' align='center'>Occupancy</Typography>
-        <OccupancyGraph convention={convention} />
+        <Tabs centered value={lineSelected} onChange={handleLineChange}>
+          {lineSelectorLabel.map(value => <Tab key={value} label={value} />)}
+        </Tabs>
+        <Typography variant='h5' align='center'>{lineSelectorLabel[lineSelected]}</Typography>
+        {lineGraphs[lineSelected]}
       </Paper>
     </>
   )
